@@ -9,12 +9,12 @@ import java.util.List;
 public class TestLoggingImpl implements TestLogging {
 
     @Override
+    @Log
     public void calculate(int param1) {
         System.out.println("START calculate with one param (" + param1 + ")");
     }
 
     @Override
-    @Log
     public void calculate(int param1, int param2) {
         System.out.println("START calculate with two params (" + param1 + " " + param2 + ")");
     }
@@ -26,7 +26,6 @@ public class TestLoggingImpl implements TestLogging {
     }
 
     @Override
-    @Log
     public double getSomeValue(boolean isPositive, double minValue, double maxValue, List<Double> excludeValues) {
         System.out.println("START getSomeValue with four params (" + isPositive + " "
                 + minValue + " " + maxValue + " " + Arrays.toString(excludeValues.toArray()) + ")");
@@ -34,6 +33,7 @@ public class TestLoggingImpl implements TestLogging {
     }
 
     @Override
+    @Log
     public double getSomeValue(boolean isPositive, double minValue, double maxValue) {
         System.out.println("START getSomeValue with three params (" + isPositive + " "
                 + minValue + " " + maxValue + ")");
@@ -41,7 +41,6 @@ public class TestLoggingImpl implements TestLogging {
     }
 
     @Override
-    @Log
     public String toString() {
         return "TestLoggingImpl{}";
     }

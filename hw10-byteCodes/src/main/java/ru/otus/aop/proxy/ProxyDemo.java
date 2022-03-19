@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ProxyDemo {
     public static void main(String[] args) {
-        TestLogging myTestLogging = ProxyHelper.createMyClass();
+        TestLogging myTestLogging = LoggingProxy.createInstanceForClass(TestLoggingImpl.class);
 
         myTestLogging.calculate(1);
         myTestLogging.calculate(2, 3);
